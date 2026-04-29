@@ -1,9 +1,13 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const connectDB = require('./config/db');
+const { errorHandler } = require('./middleware/errorHandler');
 
 dotenv.config();
+
+// Connect to Database
+connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,16 +21,15 @@ app.get('/', (req, res) => {
   res.send('Digital Atelier Backend is running! 🚀');
 });
 
-// MongoDB Connection (Placeholder - needs your URI in .env)
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/digital-atelier';
-
-mongoose.connect(MONGODB_URI)
-  .then(() => console.log('✅ Connected to MongoDB'))
-  .catch((err) => console.error('❌ MongoDB connection error:', err));
-
 // Routes
 const projectRoutes = require('./routes/projectRoutes');
+const authRoutes = require('./routes/authRoutes');
+
 app.use('/api/projects', projectRoutes);
+app.use('/api/auth', authRoutes);
+
+// Global Error Handler Middleware (must be at the end)
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT}`);

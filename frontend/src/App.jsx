@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { NotificationProvider } from './context/NotificationContext';
+
 import LoginPage from './pages/LoginPage';
 import AppLayout from './layouts/AppLayout';
 import AuthLayout from './layouts/AuthLayout';
@@ -17,35 +20,39 @@ import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Auth Routes */}
-        <Route element={<AuthLayout />}>
-          <Route path="/login" element={<LoginPage />} />
-        </Route>
+    <NotificationProvider>
+      <AuthProvider>
+        <Router>
+          <Routes>
+            {/* Auth Routes */}
+            <Route element={<AuthLayout />}>
+              <Route path="/login" element={<LoginPage />} />
+            </Route>
 
-        {/* Protected App Routes */}
-        <Route element={<AppLayout />}>
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/pages" element={<PagesManagementPage />} />
-          <Route path="/design" element={<DesignSettingsPage />} />
-          <Route path="/assets" element={<AssetsLibraryPage />} />
-          <Route path="/settings" element={<ProjectSettingsPage />} />
-          <Route path="/templates" element={<TemplatesPage />} />
-          <Route path="/publish" element={<PublishPage />} />
-          <Route path="/analytics" element={<AnalyticsPage />} />
-          <Route path="/store" element={<StoreManagementPage />} />
-          <Route path="/profile" element={<UserProfilePage />} />
-        </Route>
-        
-        {/* Full Screen Editor Route without Sidebar */}
-        <Route path="/editor/:id" element={<SiteEditorPage />} />
+            {/* Protected App Routes */}
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<Navigate to="/login" replace />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/pages" element={<PagesManagementPage />} />
+              <Route path="/design" element={<DesignSettingsPage />} />
+              <Route path="/assets" element={<AssetsLibraryPage />} />
+              <Route path="/settings" element={<ProjectSettingsPage />} />
+              <Route path="/templates" element={<TemplatesPage />} />
+              <Route path="/publish" element={<PublishPage />} />
+              <Route path="/analytics" element={<AnalyticsPage />} />
+              <Route path="/store" element={<StoreManagementPage />} />
+              <Route path="/profile" element={<UserProfilePage />} />
+            </Route>
+            
+            {/* Full Screen Editor Route without Sidebar */}
+            <Route path="/editor/:id" element={<SiteEditorPage />} />
 
-        {/* 404 Catch-All Route */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Router>
+            {/* 404 Catch-All Route */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
+    </NotificationProvider>
   );
 }
 
