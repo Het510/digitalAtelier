@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # 🎨 Digital Atelier
 
 > **"Every shop owner deserves a beautiful website — no coding required."**
@@ -181,42 +180,6 @@ Digital Atelier gives shop owners a simple, guided flow to build and publish a p
 ## Folder Structure
 
 ```
-=======
-🎨 Digital Atelier
-
-Empowering shop owners to build beautiful websites — no coding knowledge required.
-
-
-💡 Problem Statement
-
-"Why can't shop owners create websites without coding knowledge?"
-
-Thousands of small shop owners — boutiques, local stores, fashion brands — have great products but no online presence. Hiring a developer is expensive. Learning to code takes months. Existing platforms are either too complex or too limited.
-Digital Atelier solves this. It gives shop owners a simple, elegant platform to create and launch their own professional website — no code, no technical skills, no hassle.
-
-📌 Project Overview
-Digital Atelier is a no-code website builder designed specifically for shop owners. It lets non-technical users create stunning, fully responsive storefronts by simply filling in their details, choosing a style, and going live — all through an intuitive UI.
-The project is built pixel-perfect from a Figma design, translating creative UI/UX decisions into a fully functional web application with a React + Tailwind frontend and a Node.js + MongoDB backend.
-
-🎨 Figma Design
-The entire UI is based on the following Figma design file:
-🔗 View Figma Design
-The Figma file includes:
-
-Full page layouts (Desktop & Mobile)
-Component designs (Navbar, Hero, Cards, Footer, etc.)
-Color palette, typography, and spacing system
-Interactive prototype flows
-
-
-🎯 Features Overview
-🏪 For Shop Owners
-FeatureDescription🚀 No-Code BuilderCreate a full website without writing any code🎨 Custom BrandingAdd shop name, logo, colors, and tagline🛍️ Product ListingsUpload products with images, prices & descriptions👁️ Live PreviewSee your site in real time before publishing🌐 One-Click PublishGo live instantly with a shareable link📱 Mobile-ReadyEvery storefront is fully responsive by default📬 Contact FormLet customers reach out directly from your page
-⚙️ Platform & Technical
-FeatureDescription🔐 User AuthenticationSecure sign up / login with JWT🗂️ DashboardManage shop, products & website from one place🖼️ Template SelectionChoose from pre-designed themes🔍 SEO-FriendlyProper meta tags for search visibility🗄️ REST APINode.js + Express powering all backend operations☁️ Image UploadCloud-based product image management
-
-📁 Folder Structure
->>>>>>> Stashed changes
 digitalAtelier/
 │
 ├── frontend/                   # 🖥️ React + Tailwind CSS app
@@ -236,14 +199,13 @@ digitalAtelier/
 │   ├── routes/                 # API route definitions
 │   ├── controllers/            # Business logic handlers
 │   ├── models/                 # Database schemas
-│   ├── middleware/             # Auth & error handling
+│   ├── middleware/              # Auth & error handling
 │   ├── config/                 # DB & environment setup
 │   └── utils/                  # Helper functions
 │
 ├── .gitignore
 ├── README.md
 └── LICENSE
-<<<<<<< Updated upstream
 ```
 
 ---
@@ -302,7 +264,7 @@ digitalAtelier/
 ## Risks
 
 | Risk | Mitigation |
-|------|-----------|
+|------|-----------| 
 | Low adoption from non-tech users | Simple onboarding flow with guided steps and tooltips |
 | Competition from Wix / Shopify | Hyper-focus on shop owners — simpler, faster, cheaper |
 | Image storage costs | Optimize with compression + tiered storage plans |
@@ -328,8 +290,3 @@ digitalAtelier/
 ---
 
 *Digital Atelier — Every shop owner deserves a beautiful website.*
-=======
-
-🛠️ Tech Stack
-TechnologyUsageReact.jsComponent-based UI & routingTailwind CSSUtility-first responsive stylingJavaScript (ES6+)Logic & interactivityNode.js + ExpressBackend server & REST APIsMongoDBDatabase for users, shops & productsJWTSecure user authenticationFigmaUI/UX Design sourceGit & GitHubVersion control & collaboration
->>>>>>> Stashed changes
