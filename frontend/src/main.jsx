@@ -3,8 +3,19 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+console.log('Starting React mount...');
+try {
+  const rootElement = document.getElementById('root');
+  if (!rootElement) {
+    console.error('Root element not found!');
+  } else {
+    ReactDOM.createRoot(rootElement).render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>,
+    );
+    console.log('Render called successfully');
+  }
+} catch (error) {
+  console.error('Critical error during mount:', error);
+}
