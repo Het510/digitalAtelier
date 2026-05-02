@@ -50,21 +50,21 @@ export const AuthProvider = ({ children }) => {
    */
   useEffect(() => {
     const verifyExistingToken = async () => {
+      console.log('Verifying token...', token);
       if (!token) {
+        console.log('No token found, setting loading to false.');
         setLoading(false);
         return;
       }
 
       try {
-        // Set the authorization header for the verification request
         API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-        
         const response = await API.get('/auth/me');
+        console.log('Auth check response:', response.data);
         
         if (response.data.success) {
           setUser(response.data.user);
         } else {
-          // Token is invalid, clear it
           saveToken(null);
           setUser(null);
         }
@@ -73,6 +73,7 @@ export const AuthProvider = ({ children }) => {
         saveToken(null);
         setUser(null);
       } finally {
+        console.log('Setting loading to false (finally).');
         setLoading(false);
       }
     };
